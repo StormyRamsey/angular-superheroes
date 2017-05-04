@@ -10,8 +10,9 @@
 <body ng-controller="SuperheroController as vm">
   Search Superhero Phone Book
   <input type="text" ng-model="vm.superheroSearch">
-  <div ng-class="marvel" ng-repeat="superhero in vm.superhero | filter: {name: vm.superheroSearch}">
-    <p>{{ $index + 1 }}. {{ superhero.name }}, {{ superhero.phone }}</p> <p ng-class="marvel" ng-style"{color: pink}">{{ superhero.comic }}</p>
+  <div ng-repeat="superhero in vm.superhero | filter: {name: vm.superheroSearch}">
+    <p>{{ $index + 1 }}. {{ superhero.name }}, {{ superhero.phone }}</p>
+    <p ng-class="superhero.comic.toLowerCase()">{{ superhero.comic }}</p>
     <img src="{{ superhero.photo_url}}" alt="">
   </div>
 
