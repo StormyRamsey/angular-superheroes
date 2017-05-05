@@ -13,7 +13,8 @@
   <div ng-repeat="superhero in vm.superhero | filter: {name: vm.superheroSearch}">
     <p>{{ $index + 1 }}. {{ superhero.name }}, {{ superhero.phone }}</p>
     <p ng-class="superhero.comic.toLowerCase()">{{ superhero.comic }}</p>
-    <img src="{{ superhero.photo_url}}" alt="">
+    <button ng-click="superhero.select.photo_url"></button>
+    <img ng-src="{{ superhero.photo_url}}" alt="">
   </div>
 
 
